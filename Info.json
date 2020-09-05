@@ -1,0 +1,9 @@
+{
+    "Id": "SmoothCamera",
+    "DisplayName": "Smooth Camera",
+    "Author": "fauxnik",
+    "Version": "0.0.0",
+    "AssemblyName": "SmoothCamera.dll",
+    "EntryMethod": "SmoothCamera.Main.OnLoad",
+    "Repository": "https://raw.githubusercontent.com/fauxnik/DerailValleySmoothCameraMod/master/Repository.json"
+}
