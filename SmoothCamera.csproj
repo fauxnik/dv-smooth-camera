@@ -36,6 +36,9 @@
     <Reference Include="AwesomeTechnologies.VegetationStudioPro.Runtime">
       <HintPath>dv\DerailValley_Data\Managed\AwesomeTechnologies.VegetationStudioPro.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="DV.Utils">
+      <HintPath>dv\DerailValley_Data\Managed\DV.Utils.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

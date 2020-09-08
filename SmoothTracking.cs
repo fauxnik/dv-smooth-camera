@@ -1,9 +1,8 @@
 ﻿using AwesomeTechnologies.VegetationSystem;
+using DV.Utils;
 using System;
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.XR;
-using UnityModManagerNet;
 
 namespace SmoothCamera
 {
@@ -79,6 +78,17 @@ namespace SmoothCamera
             positionVelo = Vector3.zero;
             rotationVelo = Vector3.zero;
             lastUpdate = DateTime.Now;
+            SingletonBehaviour<WorldMover>.Instance.WorldMoved += OnWorldMoved;
+        }
+
+        void OnDestroy()
+        {
+            SingletonBehaviour<WorldMover>.Instance.WorldMoved -= OnWorldMoved;
+        }
+
+        void OnWorldMoved(WorldMover _, Vector3 moveVector)
+        {
+            transform.position = transform.position - moveVector;
         }
 
         void Update()
