@@ -12,11 +12,11 @@ namespace SmoothCamera
         false;
 #endif
         [Draw(Label = "Field Of View", Min = 30, Max = 360)]
-        public float fieldOfView = 90;
+        public float fieldOfView = 80;
         [Draw(Label = "Smoothing Time - Position (values other than 0 may have undesirable results)", Min = 0)]
         public float smoothTimePosition = 0f;
         [Draw(Label = "Smoothing Time - Rotation", Min = 0)]
-        public float smoothTimeRotation = 0.7f;
+        public float smoothTimeRotation = 0.5f;
 
         override public void Save(UnityModManager.ModEntry entry)
         {
