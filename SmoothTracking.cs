@@ -1,5 +1,4 @@
 ﻿using AwesomeTechnologies.VegetationSystem;
-using DV.Utils;
 using System;
 using UnityEngine;
 using UnityEngine.XR;
@@ -8,6 +7,8 @@ namespace SmoothCamera
 {
     class SmoothTracking : MonoBehaviour
     {
+        static GameViewRenderMode defaultGameViewRenderMode;
+
         public static void SetupSmoothedCamera()
         {
             if (!VRManager.IsVREnabled())
@@ -46,6 +47,7 @@ namespace SmoothCamera
 
             VegetationSystemPro veggieSys = UnityEngine.Object.FindObjectOfType<VegetationSystemPro>();
             veggieSys.RemoveCamera(smoothCam.GetComponent<Camera>());
+            XRSettings.gameViewRenderMode = defaultGameViewRenderMode;
 
             Destroy(smoothCam);
         }
@@ -57,6 +59,8 @@ namespace SmoothCamera
             var veggieSys = UnityEngine.Object.FindObjectOfType<VegetationSystemPro>();
             var smoothCam = SetupCamera("SmoothCamera", Camera.main);
             veggieSys.AddCamera(smoothCam);
+            defaultGameViewRenderMode = XRSettings.gameViewRenderMode;
+            XRSettings.gameViewRenderMode = GameViewRenderMode.None;
         }
 
         static Camera SetupCamera(string name, Camera target)
