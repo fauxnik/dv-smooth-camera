@@ -4,7 +4,7 @@ namespace SmoothCamera
 {
     public class Settings : UnityModManager.ModSettings, IDrawable
     {
-        [Draw("Enable logging")]
+        [Draw("Enable verbose logging")]
         public bool isLoggingEnabled =
 #if DEBUG
         true;

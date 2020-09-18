@@ -41,7 +41,7 @@ namespace SmoothCamera
         static void OnSaveGUI(UnityModManager.ModEntry modEntry) { settings.Save(modEntry); }
 
         public static void Log(object message) { if (settings.isLoggingEnabled) { Debug.Log(message); } }
-        public static void LogWarning(object message) { if (settings.isLoggingEnabled) { Debug.LogWarning(message); } }
-        public static void LogError(object message) { if (settings.isLoggingEnabled) { Debug.LogError(message); } }
+        public static void LogWarning(object message) { Debug.LogWarning(message); }
+        public static void LogError(object message) { Debug.LogError(message); }
     }
 }
